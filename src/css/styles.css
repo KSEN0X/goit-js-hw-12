@@ -11,7 +11,7 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: 400;
 
   color: #242424;
@@ -22,4 +22,216 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-size: 16px;
+}
+
+.form {
+  display: flex;
+  padding: 24px;
+  margin: auto;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 8px;
+  background: #FFF;
+}
+
+input {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+input::placeholder {
+  color: #808080;
+}
+
+button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: none;
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #FFFFFF;
+  width: 91px;
+  height: 40px;
+
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+button:hover {
+  background: #6C8CFF;
+}
+
+.gallery {
+  display: flex;
+  padding: 24px 156px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  background: #FFF;
+}
+
+.card {
+  width: 360px;
+  height: 200px;
+}
+
+.gallery-item {
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+
+.description {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.description p {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  align-items: center;
+}
+
+span {
+  font-weight: normal;
+}
+
+.gallery-item:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sl-wrapper {
+  background: #2E2F42CC;
+}
+
+.sl-wrapper button.sl-close {
+  color: #FFF;
+}
+
+.sl-wrapper .sl-navigation button.sl-prev,
+.sl-wrapper .sl-navigation button.sl-next {
+  color: #FFF;
+}
+
+.sl-wrapper.simple-lightbox div.sl-counter {
+  color: #FFF;
+}
+
+.loader {
+  font-size: 48px;
+  color: #FFF;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  position: relative;
+  /* position: absolute; */
+}
+
+.loader:before {
+  content: '';
+  animation: 5s print linear alternate infinite;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translatey(-45%);
+  width: 2px;
+  height: 1.3em;
+  background: currentColor;
+  opacity: 0.8;
+  animation: 1s blink steps(2) infinite;
+}
+
+@keyframes blink {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes print {
+  0% {
+    content: 'L'
+  }
+
+  10% {
+    content: 'Lo'
+  }
+
+  20% {
+    content: 'Loa'
+  }
+
+  30% {
+    content: 'Load'
+  }
+
+  40% {
+    content: 'Loadi'
+  }
+
+  50% {
+    content: 'Loadin'
+  }
+
+  60% {
+    content: 'Loading'
+  }
+
+  70% {
+    content: 'Loading.'
+  }
+
+  80% {
+    content: 'Loading..'
+  }
+
+  90%,
+  100% {
+    content: 'Loading...'
+  }
+}
+
+.load-more {
+  display: flex;
+  margin-top: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
 }
